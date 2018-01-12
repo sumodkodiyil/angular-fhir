@@ -1,0 +1,8 @@
+<h2>Authorized Patients</h2>
+<div>
+  <ul>
+    <li *ngFor="let patient of patientList">
+      <a href="/patient?id={{patient.id}}">{{patient.name}}</a>
+    </li>
+  </ul>
+</div>
