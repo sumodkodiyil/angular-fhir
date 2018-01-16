@@ -1,5 +1,5 @@
 import { AuthorizationCode } from './auth-code';
-import { Configuration } from '../utils/configuration';
+import { Configuration } from '../../utils/configuration';
 
 export class AccessTokenRequest {
     client_id: string;

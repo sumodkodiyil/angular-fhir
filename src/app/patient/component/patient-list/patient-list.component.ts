@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FhirService } from '../../service/fhir.service';
+import { PatientService } from '../../service/patient.service';
 import { Patient } from '../../model/patient';
 import { forEach } from '@angular/router/src/utils/collection';
 
@@ -12,7 +12,7 @@ import { forEach } from '@angular/router/src/utils/collection';
 })
 export class PatientListComponent implements OnInit {
 
-  constructor( private fhirService: FhirService) {}
+  constructor( private patientService: PatientService) {}
 
   ngOnInit() {
     this.getPatientList();
@@ -21,7 +21,7 @@ export class PatientListComponent implements OnInit {
   patientList: Patient[] = [];
   
   getPatientList(): void{
-    this.fhirService.getAutorizedPatient().subscribe(
+    this.patientService.getAutorizedPatient().subscribe(
       response => this.parseResponse(response)
     );
   }

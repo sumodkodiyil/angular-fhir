@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Configuration } from '../utils/configuration';
+import { Configuration } from '../../utils/configuration';
 import { AccessTokenRequest } from '../model/access-token-request';
 import { AccessTokenResponse } from '../model/access-token-response';
 

@@ -2,32 +2,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { RedirectComponent } from './component/redirect/redirect.component';
-import { AuthComponent } from './component/auth/auth.component';
-import { PatientListComponent } from './component/patient-list/patient-list.component';
-
-import { AuthService } from './service/auth.service';
 import { CookieHandler } from './service/cookie.service';
-import { FhirService } from './service/fhir.service';
 
-import { AppRoutingModule } from './/app-routing.module';
-
+const routes: Routes = [
+  { path:'', redirectTo:'auth/landing', pathMatch:'full' },
+  { path: 'auth', loadChildren: './auth/auth.module#AuthModule' },
+  { path: 'patient', loadChildren: './patient/patient.module#PatientModule'}
+];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AuthComponent,
-    RedirectComponent,
-    PatientListComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, CookieService, CookieHandler, FhirService],
+  providers: [CookieService, CookieHandler],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
