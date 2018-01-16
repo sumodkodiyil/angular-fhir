@@ -27,9 +27,11 @@ export class PatientListComponent implements OnInit {
   }
 
   parseResponse(response): void{
-    response.entry.forEach(patient => {
-      this.patientList.push(new Patient(patient.resource.id, patient.resource.name[0].given, patient.resource.gender, patient.resource.birthDate));
-    });
+    if(response){
+      response.entry.forEach(patient => {
+        this.patientList.push(new Patient(patient.resource.id, patient.resource.name[0].given, patient.resource.gender, patient.resource.birthDate));
+      });
+    }
   }
 
 }

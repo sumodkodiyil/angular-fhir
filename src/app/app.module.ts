@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CookieHandler } from './service/cookie.service';
+import { ErrorService } from './service/error.service';
 
 const routes: Routes = [
   { path:'', redirectTo:'auth/landing', pathMatch:'full' },
@@ -22,7 +23,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [CookieService, CookieHandler],
+  providers: [CookieService, CookieHandler, ErrorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

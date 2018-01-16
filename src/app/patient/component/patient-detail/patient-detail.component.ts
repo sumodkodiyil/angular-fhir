@@ -29,6 +29,9 @@ export class PatientDetailComponent implements OnInit {
   }
   
   parseResponse(response): void{
-    this.contextPatient = new Patient(response.id, response.name[0].given, response.gender, response.birthDate);
+    if(response){
+      this.contextPatient = new Patient(response.id, response.name[0].given, response.gender, response.birthDate);
+    }
+    
   }
 }

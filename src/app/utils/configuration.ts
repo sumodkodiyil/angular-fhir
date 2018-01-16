@@ -4,6 +4,7 @@ export class  Configuration{
     static authorizeUrl:string = "http://shell.chbase.com/oauth/authorize";
     static redirectUrl:string = "http://127.0.0.1:4200/auth/redirect";
     static applicationId:string = "a206a771-abfb-4297-90fa-1128335b9245";
+    static appSecret:string ="f5175e4b-b598-4d26-9328-614ff3e7b6eb";
     static tokenExchangeUrl: string = "http://shell.chbase.com/oauth";
     static accessTokenUrl: string = "http://shell.chbase.com/oauth/token";
     static fhirEndPoint: string = "http://platform.chbase.com/api/fhir";
